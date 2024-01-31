@@ -34,3 +34,6 @@ services:
       # Apply autentificiation with http challenge
       - "traefik.http.routers.portainer-exemplo-secured.tls=true"
       - "traefik.http.routers.portainer-exemplo-secured.tls.certresolver=myhttpchallenge"
+      # Get service on 9000 port
+      - "traefik.http.routers.portainer-vieira.service=portainer-exemplo"
+      - "traefik.http.services.portainer-exemplo.loadbalancer.server.port=9000"
